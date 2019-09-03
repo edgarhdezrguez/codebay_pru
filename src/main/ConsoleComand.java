@@ -1,7 +1,13 @@
 package main;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import com.google.gson.Gson;
 
 public class ConsoleComand {
 	
@@ -86,6 +92,33 @@ public class ConsoleComand {
                         break;
                     case 4:
                         System.out.println("Has seleccionado la opcion 4");
+                        System.out.println("Inserte el nombre: ");
+            			String name = sn.next();
+            			System.out.println("Inserte el apellido: ");
+            			String surname = sn.next();
+            			System.out.println("Inserte si es activo (true o false): ");
+            			String active = sn.next();
+            			System.out.println("Inserte el email: ");
+            			String email = sn.next();
+            			System.out.println("Inserte la ciudad: ");
+            			String city = sn.next();
+            			Date fecha = new Date();
+            			SimpleDateFormat formatted = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS+hh:mm");
+            			String creationDate = formatted.format(fecha);
+            			
+            			InsertNewUser User = new InsertNewUser(name,surname,active,email,city,creationDate);
+            			System.out.println("despues de insert User: " + User);
+            			Gson gson = new Gson();
+            			String Json = gson.toJson(User);
+            			
+						try {
+							AddNewUserInJson.main(Json);
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+	            			
+            			System.out.println("resultado: " + Json);
                         break;
                     case 5:
                         salir = true;
@@ -100,5 +133,33 @@ public class ConsoleComand {
         }
 
     }
-
+/*
+    static class NewUser{
+    	private String name;
+    	private String surname;
+    	private String active;
+    	private String email;
+    	private String city;
+    	private SimpleDateFormat creationDate;
+    	
+    	Collection NewUser1 = new ArrayList();
+    	
+    	private NewUser(String name, String surname, String active, String email, String city, SimpleDateFormat creationDate)
+		{
+    		this.name = name;
+    		this.surname = surname;
+    		this.active = active;
+    		this.city = city;
+    		this.email = email;
+    		this.creationDate = creationDate;
+			/*NewUser1.add(name);
+			NewUser1.add(surname);
+			NewUser1.add(active);
+			NewUser1.add(email);
+			NewUser1.add(city);
+			NewUser1.add(creationDate);
+			
+			
+		}
+    }*/
 }
