@@ -4,6 +4,20 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ConsoleComand {
+	
+	public static boolean esSoloLetras(String cadena)
+	{
+ 
+		for (int i = 0; i < cadena.length(); i++)
+		{
+			char caracter = cadena.toUpperCase().charAt(i);
+			int valorASCII = (int)caracter;
+			if (valorASCII != 165 && (valorASCII < 65 || valorASCII > 90))
+				return false;
+		}
+
+		return true;
+	}
 
     public static void main(String[] args) {
 
@@ -28,10 +42,10 @@ public class ConsoleComand {
                     case 1:
                     	
                         System.out.println("Has seleccionado la opcion 1");
+                        
 						try {
 							ReadFile2.main(args);
 						} catch (IOException e) {
-							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
                         break;
@@ -41,15 +55,34 @@ public class ConsoleComand {
                         String letterFilter = sn.next();
                         letterFilter = letterFilter.toUpperCase();
                         System.out.println("Has escrito la letra por la que filtrar: " + letterFilter);
-						try {
-							SearchCityByLetter.main(letterFilter);
-						} catch (IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+                        if(esSoloLetras(letterFilter))
+                        {
+							try {
+								SearchCityByLetter.main(letterFilter);
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+                        }
+                        else
+                        {
+                        	System.out.println("Se ha escrito un caracter incorrecto.");
+                        	System.out.println(" ");
+                        }
                         break;
                     case 3:
                         System.out.println("Has seleccionado la opcion 3");
+                        System.out.println("Escribe A para ascendente o D para descendente: ");
+                        String ControlOrder = sn.next();
+                        
+                        if(esSoloLetras(ControlOrder)){
+	                        OrderByDate2.main(ControlOrder);
+	                        
+		                }
+		                else
+		                {
+		                	System.out.println("Se ha escrito un caracter incorrecto.");
+		                	System.out.println(" ");
+		                }    
                         break;
                     case 4:
                         System.out.println("Has seleccionado la opcion 4");
