@@ -6,7 +6,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonPrimitive;
-import java.util.Map.Entry;
 
 public class ReadFileJson {
 	private static final String datas = "data.json";
@@ -67,7 +66,6 @@ public class ReadFileJson {
     	//System.out.println("+++++ Elemento como String ++++: " + StringDatos);
     	System.out.println("****** Longitud de la cadena *****: " + array.size());
     	JsonParser parser = new JsonParser();
-    	FileReader fr = new FileReader("data.json");
     	Object obj = parser.parse(new FileReader(datas));
     	JsonArray json = (JsonArray) obj;
     	
@@ -76,12 +74,6 @@ public class ReadFileJson {
     		String active = object.get("active").toString();
     		if(active=="true") {
     			System.out.println("+++++ Dentro de If elemento ++++" + elemento);
-    			/*JsonPrimitive valor = elemento.getAsJsonPrimitive();
-    			if(valor.isBoolean()){
-    				
-    				System.out.println("****** DATOS SEGUNDA FUNC *****: " + array.getAsJsonArray());
-    				
-    			}*/
     			
     		}
     		
