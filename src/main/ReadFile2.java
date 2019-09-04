@@ -16,13 +16,10 @@ public class ReadFile2 {
         	System.out.println("-----------------------------------------");
         	for(int y=0; y < json.size(); y++) {
         		JsonObject object =(JsonObject) json.get(y);
-        		boolean active = object.get("active").getAsBoolean();
-        		
+        		boolean active = object.get("active").getAsBoolean();        		
         		if(active) {
-        			System.out.println(object);
-        			
-        		}
-        		
+        			System.out.println(object);        			
+        		}        		
         	}
         	System.out.println("-----------------------------------------");
         	} catch (Exception ex) {

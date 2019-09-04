@@ -9,7 +9,7 @@ import com.google.gson.Gson;
 
 public class ConsoleComand {
 	
-	public static boolean esSoloLetras(String cadena)
+	public static boolean justLetters(String cadena)
 	{
  
 		for (int i = 0; i < cadena.length(); i++)
@@ -54,7 +54,7 @@ public class ConsoleComand {
                         String letterFilter = sn.next();
                         letterFilter = letterFilter.toUpperCase();
                         System.out.println("Yo have writte the next letter for filtered: " + letterFilter);
-                        if(esSoloLetras(letterFilter))
+                        if(justLetters(letterFilter))
                         {
 							try {
 								SearchCityByLetter.main(letterFilter);
@@ -72,7 +72,7 @@ public class ConsoleComand {
                         System.out.println("You have selected the option 3");
                         System.out.println("Writte A for ascending or D for descending: ");
                         String ControlOrder = sn.next();                        
-                        if(esSoloLetras(ControlOrder)){
+                        if(justLetters(ControlOrder)){
 	                        OrderByDate2.main(ControlOrder);	                        
 		                }
 		                else
