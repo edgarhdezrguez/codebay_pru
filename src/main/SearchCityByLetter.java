@@ -17,16 +17,11 @@ public class SearchCityByLetter {
         	System.out.println("-----------------------------------------");
         	for(int y=0; y < json.size(); y++) {
         		JsonObject object =(JsonObject) json.get(y);
-        		//boolean active = object.get("active").getAsBoolean();
         		String city = object.get("city").getAsString();
         		city = city.toUpperCase();
-        		//System.out.println("+++++ Antes de If active, objecto ++++: " + object);
-        		
-        		//System.out.println("+++++ Antes de If active, valor de active ++++: " + active);
-        		
+	
         		if(city.startsWith(letterFilter)) {
-        			System.out.println(object);
-        			//System.out.println("-----------------------------------------");        			
+        			System.out.println(object);      			
         		}
         		
         	}

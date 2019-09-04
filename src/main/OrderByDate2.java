@@ -16,8 +16,7 @@ public class OrderByDate2 {
 public static void main(String args) {
     JsonParser parser = new JsonParser();
     String Orden = args;
-    
-    //System.out.println("Antes de entrar try Orden: " + Orden);
+
     final String datas = "data.json";
     try {
     	
@@ -59,11 +58,8 @@ public int compare(JsonObject o1, JsonObject o2) {
     String v1 = o1.get("creationDate").getAsString();
     String v3 = o2.get("creationDate").getAsString();
     try {
-		//return formatter.parse(v1).compareTo(formatter.parse(v3));
     	return formatter.parse(v3).compareTo(formatter.parse(v1));
 	} catch (ParseException e) {
-		// TODO Auto-generated catch block
-		//return 0;
 		throw new IllegalArgumentException(e); 
 	}
 	

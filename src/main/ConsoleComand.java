@@ -1,8 +1,6 @@
 package main;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -27,28 +25,23 @@ public class ConsoleComand {
 
     public static void main(String[] args) {
 
-        Scanner sn = new Scanner(System.in);
+        @SuppressWarnings("resource")
+		Scanner sn = new Scanner(System.in);
         boolean salir = false;
-        int opcion; //Guardaremos la opcion del usuario
+        int opcion;
 
         while (!salir) {
-
             System.out.println("1. Listar usuarios activos");
             System.out.println("2. Listar las ciudades cuya ciudad empiece por lo que inserte.");
             System.out.println("3. Listar los usuarios por fecha de creación (Ascendente y Descendente)");
             System.out.println("4. Añadir un usuario");
             System.out.println("5. Salir");
-
             try {
-
                 System.out.println("Escribe una de las opciones");
                 opcion = sn.nextInt();
-
                 switch (opcion) {
                     case 1:
-                    	
-                        System.out.println("Has seleccionado la opcion 1");
-                        
+                        System.out.println("Has seleccionado la opcion 1");                     
 						try {
 							ReadFile2.main(args);
 						} catch (IOException e) {
@@ -78,11 +71,9 @@ public class ConsoleComand {
                     case 3:
                         System.out.println("Has seleccionado la opcion 3");
                         System.out.println("Escribe A para ascendente o D para descendente: ");
-                        String ControlOrder = sn.next();
-                        
+                        String ControlOrder = sn.next();                        
                         if(esSoloLetras(ControlOrder)){
-	                        OrderByDate2.main(ControlOrder);
-	                        
+	                        OrderByDate2.main(ControlOrder);	                        
 		                }
 		                else
 		                {
@@ -109,12 +100,10 @@ public class ConsoleComand {
             			InsertNewUser User = new InsertNewUser(name,surname,active,email,city,creationDate);
             			System.out.println("despues de insert User: " + User);
             			Gson gson = new Gson();
-            			String Json = gson.toJson(User);
-            			
+            			String Json = gson.toJson(User);            			
 						try {
 							AddNewUserInJson.main(Json);
 						} catch (IOException e) {
-							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
 	            			
@@ -133,33 +122,4 @@ public class ConsoleComand {
         }
 
     }
-/*
-    static class NewUser{
-    	private String name;
-    	private String surname;
-    	private String active;
-    	private String email;
-    	private String city;
-    	private SimpleDateFormat creationDate;
-    	
-    	Collection NewUser1 = new ArrayList();
-    	
-    	private NewUser(String name, String surname, String active, String email, String city, SimpleDateFormat creationDate)
-		{
-    		this.name = name;
-    		this.surname = surname;
-    		this.active = active;
-    		this.city = city;
-    		this.email = email;
-    		this.creationDate = creationDate;
-			/*NewUser1.add(name);
-			NewUser1.add(surname);
-			NewUser1.add(active);
-			NewUser1.add(email);
-			NewUser1.add(city);
-			NewUser1.add(creationDate);
-			
-			
-		}
-    }*/
 }

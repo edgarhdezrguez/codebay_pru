@@ -18,10 +18,6 @@ public class ReadFile2 {
         		JsonObject object =(JsonObject) json.get(y);
         		boolean active = object.get("active").getAsBoolean();
         		
-        		//System.out.println("+++++ Antes de If active, objecto ++++: " + object);
-        		
-        		//System.out.println("+++++ Antes de If active, valor de active ++++: " + active);
-        		
         		if(active) {
         			System.out.println(object);
         			
