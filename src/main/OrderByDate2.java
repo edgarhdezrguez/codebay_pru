@@ -33,11 +33,11 @@ public static void main(String args) {
         Orden = Orden.toUpperCase().substring(0, 1);
         
         if(Orden.equals("A")) {
-        	System.out.println("*********** Usuarios ordenados Ascendentemente **********");
+        	System.out.println("*********** Users sorted Ascendingly **********");
         	Collections.sort(list, new MyJSONComparatorAsc());
         	
         }else{
-        	System.out.println("*********** Usuarios ordenados Descendentemente **********");
+        	System.out.println("*********** Users sorted Descending **********");
         	Collections.sort(list, new MyJSONComparatorDes());
         }
         

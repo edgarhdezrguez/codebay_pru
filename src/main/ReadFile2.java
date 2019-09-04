@@ -12,7 +12,7 @@ public class ReadFile2 {
         	JsonParser parser = new JsonParser();
         	Object obj = parser.parse(new FileReader(datas));
         	JsonArray json = (JsonArray) obj;
-        	System.out.println("****** Usuarios Activos ***** ");
+        	System.out.println("****** Active Users ***** ");
         	System.out.println("-----------------------------------------");
         	for(int y=0; y < json.size(); y++) {
         		JsonObject object =(JsonObject) json.get(y);

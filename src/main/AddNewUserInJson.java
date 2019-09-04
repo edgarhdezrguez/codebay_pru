@@ -11,7 +11,7 @@ public class AddNewUserInJson {
         	JsonParser parser = new JsonParser();
         	Object obj = parser.parse(new FileReader(datas));
         	JsonArray json = (JsonArray) obj;
-        	System.out.println("Usuario para añadir: " + json2);
+        	System.out.println("User to add: " + json2);
         	
         	System.out.println("-----------------------------------------");
         	json2.toString();

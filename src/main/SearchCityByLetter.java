@@ -13,7 +13,7 @@ public class SearchCityByLetter {
         	
         	Object obj = parser.parse(new FileReader(datas));
         	JsonArray json = (JsonArray) obj;
-        	System.out.println("****** Ciudades Encontradas *****");
+        	System.out.println("****** Citys Finded *****");
         	System.out.println("-----------------------------------------");
         	for(int y=0; y < json.size(); y++) {
         		JsonObject object =(JsonObject) json.get(y);
