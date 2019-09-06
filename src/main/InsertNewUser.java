@@ -4,12 +4,12 @@ public class InsertNewUser {
 
 	private String name;
 	private String surname;
-	private String active;
+	private Boolean active;
 	private String email;
 	private String city;
 	private String creationDate;
 	
-	public InsertNewUser(String name1, String surname1, String active1, String email1, String city1, String creationDate1)
+	public InsertNewUser(String name1, String surname1, Boolean active1, String email1, String city1, String creationDate1)
 	{
 		this.name = name1;
 		this.surname = surname1;
@@ -36,11 +36,11 @@ public class InsertNewUser {
 		this.surname = surname;
 	}
 
-	public String getActive() {
+	public Boolean getActive() {
 		return active;
 	}
 
-	public void setActive(String active) {
+	public void setActive(Boolean active) {
 		this.active = active;
 	}
 
