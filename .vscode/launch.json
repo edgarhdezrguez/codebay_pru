@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ConsoleComand",
+            "request": "launch",
+            "mainClass": "main.ConsoleComand",
+            "projectName": "CodeBay"
+        }
+    ]
+}
