@@ -8,6 +8,12 @@ import java.util.Scanner;
 import com.google.gson.Gson;
 
 public class ConsoleComand {
+	/**
+	 * This function just verify is the string is equal to a character not numeric
+	 * @param cadena
+	 * @return false if cadena is equal to number
+	 * @return true if cadena is equal to letters
+	 */
 	
 	public static boolean justLetters(String cadena)
 	{
@@ -23,6 +29,11 @@ public class ConsoleComand {
 		return true;
 	}
 
+	/**
+	 * This is the main structure of the program, we can interactuate with the rest of files java that contein the funcionality of each of the sections required
+	 * using the numbers between 1 and 4. 
+	 * @param args
+	 */
     public static void main(String[] args) {
 
         @SuppressWarnings("resource")
@@ -89,6 +100,7 @@ public class ConsoleComand {
             			String surname = sn.next();
             			System.out.println("Insert value for active (true o false): ");
             			String active = sn.next();
+            			
             			System.out.println("Insert email: ");
             			String email = sn.next();
             			System.out.println("Insert city: ");
@@ -99,7 +111,8 @@ public class ConsoleComand {
             			
             			InsertNewUser User = new InsertNewUser(name,surname,active,email,city,creationDate);
             			Gson gson = new Gson();
-            			String Json = gson.toJson(User);            			
+            			String Json = gson.toJson(User);
+            	      			
 						try {
 							AddNewUserInJson.main(Json);
 						} catch (IOException e) {

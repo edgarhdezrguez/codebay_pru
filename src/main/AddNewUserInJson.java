@@ -14,11 +14,9 @@ public class AddNewUserInJson {
         	System.out.println("User to add: " + json2);
         	
         	System.out.println("-----------------------------------------");
-        	json2.toString();
-        	System.out.println("json2 to string: " + json2.toString());
-        	
         	json.add(json2);
-
+        	
+        	System.out.println(" json:  " + json);
         	System.out.println("-----------------------------------------");
         	} catch (Exception ex) {
         		System.err.println("Error :"+ex.getMessage());	

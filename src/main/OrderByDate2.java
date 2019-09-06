@@ -36,9 +36,12 @@ public static void main(String args) {
         	System.out.println("*********** Users sorted Ascendingly **********");
         	Collections.sort(list, new MyJSONComparatorAsc());
         	
-        }else{
+        }else if(Orden.equals("D")){
         	System.out.println("*********** Users sorted Descending **********");
         	Collections.sort(list, new MyJSONComparatorDes());
+        }else
+        {
+        	System.out.println("*********** You have written an invalid option **********");
         }
         
         for (JsonObject obj : list) {
