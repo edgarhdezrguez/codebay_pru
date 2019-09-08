@@ -1,26 +1,20 @@
 package main;
 
-import java.io.FileReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import com.google.gson.JsonParser;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonArray;
 
 public class OrderByDate2 {
 
-public static void main(String args) {
-    JsonParser parser = new JsonParser();
+public static void main(String args, Object o) {
     String Orden = args;
-
-    final String datas = "data.json";
     try {
     	
-    	Object o = parser.parse(new FileReader(datas));
     	JsonArray ob = (JsonArray) o;
         JsonArray array = ob;
         ArrayList<JsonObject> list = new ArrayList<>();

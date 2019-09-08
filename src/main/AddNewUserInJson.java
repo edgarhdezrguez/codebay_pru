@@ -1,23 +1,19 @@
 package main;
-import java.io.FileReader;
-
 import com.google.gson.JsonParser;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 
 public class AddNewUserInJson {
-	private static final String datas = "data.json";
-    public static void main(String json2) throws java.io.IOException {
+	
+    public static void main(String json2, Object obj) throws java.io.IOException {
     	try {        	
-        	JsonParser parser = new JsonParser();
-        	Object obj = parser.parse(new FileReader(datas));
         	JsonArray json = (JsonArray) obj;
-        	System.out.println("User to add: " + json2);
-        	
+        	JsonObject obj2 = new JsonParser().parse(json2).getAsJsonObject();
+        	System.out.println("User to add: " + obj2);
         	System.out.println("-----------------------------------------");
-        	json.add(json2);
+
+        	json.add(obj2);
         	
-        	System.out.println(" json:  " + json);
-        	System.out.println("-----------------------------------------");
         	} catch (Exception ex) {
         		System.err.println("Error :"+ex.getMessage());	
         	}
