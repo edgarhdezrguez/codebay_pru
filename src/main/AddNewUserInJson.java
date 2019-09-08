@@ -9,6 +9,8 @@ public class AddNewUserInJson {
     	try {        	
         	JsonArray json = (JsonArray) obj;
         	JsonObject obj2 = new JsonParser().parse(json2).getAsJsonObject();
+        	System.out.println(" ");
+        	System.out.println("-----------------------------------------");
         	System.out.println("User to add: " + obj2);
         	System.out.println("-----------------------------------------");
 
